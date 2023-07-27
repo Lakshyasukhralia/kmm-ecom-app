@@ -59,7 +59,6 @@ kotlin {
                     api(ktorClientLogging)
                 }
 
-
                 // Logback for ktor logging
                 implementation(Deps.Logback.logbackClassic)
 
@@ -110,6 +109,7 @@ kotlin {
                 implementation(compose.desktop.common)
                 // Ktor
                 implementation(Deps.Io.Ktor.ktorClientJava)
+                implementation(Deps.Org.JetBrains.Kotlinx.coroutinesSwing)
             }
         }
     }

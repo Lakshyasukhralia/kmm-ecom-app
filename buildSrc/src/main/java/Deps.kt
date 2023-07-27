@@ -3,7 +3,7 @@ object Deps {
         object JetBrains {
             object Kotlinx {
                 const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-
+                const val coroutinesSwing = "org.jetbrains.kotlinx:kotlinx-coroutines-swing:${Versions.coroutines}"
                 const val kotlinxSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
             }
 

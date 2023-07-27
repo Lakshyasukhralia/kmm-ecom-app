@@ -3,7 +3,7 @@ object Versions {
     const val kotlin = "1.8.20"
     const val compose = "1.4.0"
     const val composeCompiler = "1.4.2"
-    const val coroutines = "1.7.0"
+    const val coroutines = "1.7.3"
     const val serialization = "1.4.1"
     const val mviKotlin = "3.1.0"
     const val decompose = "1.0.0-compose-experimental"
