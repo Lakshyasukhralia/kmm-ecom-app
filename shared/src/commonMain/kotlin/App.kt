@@ -4,15 +4,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import feature.category.presentation.screen.CategoryScreen
 import feature.item.presentation.screen.itemlisting.ItemListingScreen
 
 @Composable
 internal fun App() {
-    var currentScreen: Screen by rememberSaveable { mutableStateOf(Screen.ItemListing) }
+    var currentScreen: Screen by rememberSaveable { mutableStateOf(Screen.Category) }
 
     MaterialTheme {
         when (currentScreen) {
             Screen.HelloWorld -> HelloWorldScreen(
+                onButtonClick = { currentScreen = Screen.ItemListing }
+            )
+
+            Screen.Category -> CategoryScreen(
+                backAction = { currentScreen = Screen.HelloWorld },
                 onButtonClick = { currentScreen = Screen.ItemListing }
             )
 
@@ -21,7 +27,7 @@ internal fun App() {
             )
 
             Screen.ItemListing -> ItemListingScreen(
-                backAction = { currentScreen = Screen.HelloWorld }
+                backAction = { currentScreen = Screen.Category }
             )
         }
     }
