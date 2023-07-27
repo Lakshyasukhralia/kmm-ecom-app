@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
@@ -16,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.myapplication.common.MR
 import dev.icerock.moko.resources.compose.colorResource
@@ -61,8 +64,10 @@ internal fun HelloWorldScreen(onButtonClick: () -> Unit) {
             fontFamily = fontFamilyResource(MR.fonts.cormorant.italic)
         )
 
-        Button(onClick = { text = "Hello, ${getPlatformName()}" }) {
-            Text(text = stringResource(MR.strings.hello_world))
+        Button(
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black),
+            onClick = { text = "Hello, ${getPlatformName()}" }) {
+            Text(text = stringResource(MR.strings.hello_world), color = Color.White)
         }
 
         Button(onClick = onButtonClick) {
