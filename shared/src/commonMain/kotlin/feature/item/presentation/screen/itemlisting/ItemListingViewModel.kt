@@ -18,18 +18,22 @@ class ItemListingViewModel : ViewModel(), KoinComponent {
         getAllItems()
     }
 
-    fun getAllItems() {
+    private fun getAllItems() {
         viewModelScope.launch {
+            state = state.copy(isLoading = true)
+
             itemRepository.getAllItems()
                 .onSuccess { items ->
                     state = state.copy(
                         items = items,
-                        error = ""
+                        error = "",
+                        isLoading = false
                     )
                 }
                 .onFailure { e ->
                     state = state.copy(
                         error = e.message.toString(),
+                        isLoading = false
                     )
                 }
         }
