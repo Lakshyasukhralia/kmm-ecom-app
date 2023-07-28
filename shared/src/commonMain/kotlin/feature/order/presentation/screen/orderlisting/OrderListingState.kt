@@ -1,6 +1,6 @@
-package feature.item.presentation.screen.order
+package feature.order.presentation.screen.orderlisting
 
-import feature.item.domain.model.Order
+import feature.order.domain.model.Order
 
 data class OrderListingState(
     val isLoading: Boolean = false,

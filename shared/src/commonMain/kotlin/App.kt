@@ -4,12 +4,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import feature.category.presentation.screen.CategoryScreen
-import feature.home.presentation.screen.HomeScreen
+import feature.category.presentation.screen.category.CategoryScreen
+import feature.home.presentation.screen.home.HomeScreen
 import feature.item.domain.model.Item
 import feature.item.presentation.screen.itemdetail.ItemDetailScreen
 import feature.item.presentation.screen.itemlisting.ItemListingScreen
-import feature.item.presentation.screen.order.OrderListingScreen
+import feature.order.presentation.screen.orderlisting.OrderListingScreen
 
 @Composable
 internal fun App() {

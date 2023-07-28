@@ -1,7 +1,7 @@
-package feature.item.presentation.screen.order
+package feature.order.presentation.screen.orderlisting
 
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
-import feature.item.domain.repository.ItemRepository
+import feature.order.domain.repository.OrderRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -11,7 +11,7 @@ import org.koin.core.component.inject
 
 class OrderListingViewModel : ViewModel(), KoinComponent {
 
-    private val itemRepository by inject<ItemRepository>()
+    private val orderRepository by inject<OrderRepository>()
 
     private var _uiState = MutableStateFlow(OrderListingState())
     val uiState = _uiState.asStateFlow()
@@ -24,7 +24,7 @@ class OrderListingViewModel : ViewModel(), KoinComponent {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 
-            itemRepository.getAllOrders()
+            orderRepository.getAllOrders()
                 .onSuccess { items ->
                     _uiState.update {
                         it.copy(

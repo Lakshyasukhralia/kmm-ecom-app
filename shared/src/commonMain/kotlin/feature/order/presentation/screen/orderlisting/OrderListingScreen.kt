@@ -1,4 +1,4 @@
-package feature.item.presentation.screen.order
+package feature.order.presentation.screen.orderlisting
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -31,10 +31,8 @@ import core.util.BackHandler
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import dev.icerock.moko.resources.compose.fontFamilyResource
-import feature.item.domain.model.Item
-import feature.item.domain.model.Order
+import feature.order.domain.model.Order
 import feature.item.presentation.component.ErrorView
-import feature.item.presentation.component.ItemListingCard
 import feature.item.presentation.component.OrderListingCard
 
 @Composable

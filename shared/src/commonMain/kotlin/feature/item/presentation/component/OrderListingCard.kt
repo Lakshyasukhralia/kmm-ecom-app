@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.myapplication.common.MR
 import dev.icerock.moko.resources.compose.fontFamilyResource
-import feature.item.domain.model.Order
+import feature.order.domain.model.Order
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 

@@ -1,6 +1,6 @@
 package feature.item.data.remote.dto
 
-import feature.item.domain.model.Order
+import feature.order.domain.model.Order
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package feature.home.presentation.screen
+package feature.home.presentation.screen.home
 
 import Screen
 import androidx.compose.foundation.layout.Arrangement

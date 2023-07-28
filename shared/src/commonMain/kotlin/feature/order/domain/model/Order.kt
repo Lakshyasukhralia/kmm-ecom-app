@@ -1,4 +1,4 @@
-package feature.item.domain.model
+package feature.order.domain.model
 
 data class Order(
     val id: String,
