@@ -9,6 +9,7 @@ import feature.home.presentation.screen.HomeScreen
 import feature.item.domain.model.Item
 import feature.item.presentation.screen.itemdetail.ItemDetailScreen
 import feature.item.presentation.screen.itemlisting.ItemListingScreen
+import feature.item.presentation.screen.order.OrderListingScreen
 
 @Composable
 internal fun App() {
@@ -23,8 +24,7 @@ internal fun App() {
             )
 
             Screen.Home -> HomeScreen(
-                backAction = { currentScreen = Screen.HelloWorld },
-                onButtonClick = { screen -> currentScreen = screen},
+                onButtonClick = { screen -> currentScreen = screen },
             )
 
             Screen.Category -> CategoryScreen(
@@ -37,7 +37,7 @@ internal fun App() {
             )
 
             Screen.ItemListing -> ItemListingScreen(
-                backAction = { currentScreen = Screen.Category },
+                backAction = { currentScreen = Screen.Home },
                 onItemClick = { item: Item ->
                     currentScreen = Screen.ItemDetail
                     currentItem = item
@@ -51,7 +51,13 @@ internal fun App() {
                     "Sample Product Name",
                     "Compose Multiplatform for iOS is currently in Alpha, so now is a great time to explore the technology: Let’s build a simple app from start to finish in Kotlin. In the process, you’ll see how Compose Multiplatform and Kotlin Multiplatform enable sharing everything - from the networking layer, to business logic, to UI. The end result will be a small app that can load and display different bird pictures from an API, that will run on both Android and iOS!",
                     588f
-                )
+                ),
+                onCheckoutClick = { currentScreen = Screen.OrderListing }
+            )
+
+            Screen.OrderListing -> OrderListingScreen(
+                backAction = { currentScreen = Screen.Home },
+                onItemClick = {}
             )
         }
     }

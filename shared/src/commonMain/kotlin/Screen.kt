@@ -4,5 +4,6 @@ enum class Screen {
     Home,
     ItemListing,
     Category,
-    ItemDetail
+    ItemDetail,
+    OrderListing
 }

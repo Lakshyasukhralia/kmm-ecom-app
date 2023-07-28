@@ -53,7 +53,7 @@ internal fun ItemListingScreen(
                 backgroundColor = Color.Black,
                 title = {
                     Text(
-                        text = "Item Listings",
+                        text = "Products",
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_semi_bold.montserrat_semi_bold),
                         color = Color.White
                     )

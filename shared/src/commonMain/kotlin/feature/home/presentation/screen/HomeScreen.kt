@@ -27,15 +27,14 @@ import feature.home.presentation.component.HomeMenuCard
 
 @Composable
 internal fun HomeScreen(
-    backAction: () -> Unit,
     onButtonClick: (screen: Screen) -> Unit
 ) {
 
     val menuList = listOf(
-        HomeMenuItem("1", "Products", Screen.Category),
-        HomeMenuItem("2", "Orders", Screen.Category),
-        HomeMenuItem("3", "Profile", Screen.Category),
-        HomeMenuItem("4", "Settings", Screen.Category),
+        HomeMenuItem("1", "Products", Screen.ItemListing),
+        HomeMenuItem("2", "Orders", Screen.OrderListing),
+        HomeMenuItem("3", "Profile", Screen.ItemListing),
+        HomeMenuItem("4", "Settings", Screen.ItemListing),
     )
 
     Scaffold(
@@ -49,15 +48,6 @@ internal fun HomeScreen(
                         color = Color.White
                     )
                 },
-//                navigationIcon = {
-//                    IconButton(onClick = backAction) {
-//                        Icon(
-//                            imageVector = Icons.Default.ArrowBack,
-//                            contentDescription = null,
-//                            tint = Color.White
-//                        )
-//                    }
-//                }
             )
         },
         content = { _ ->
