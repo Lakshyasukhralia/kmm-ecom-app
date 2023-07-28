@@ -17,10 +17,10 @@ class ItemListingViewModel : ViewModel(), KoinComponent {
     val uiState = _uiState.asStateFlow()
 
     init {
-        getAllItems()
+//        getAllItems()
     }
 
-    private fun getAllItems() {
+    fun getAllItems() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 

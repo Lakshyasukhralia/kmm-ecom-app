@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.myapplication.common.MR
+import com.seiko.imageloader.rememberImagePainter
 import dev.icerock.moko.resources.compose.fontFamilyResource
 import feature.order.domain.model.Order
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -58,9 +59,9 @@ fun OrderListingCard(
                 elevation = 5.dp
             ) {
                 Image(
-                    painter = painterResource("compose-multiplatform.xml"),
-                    contentDescription = null,
-                    contentScale = ContentScale.Fit
+                    painter = rememberImagePainter("https://picsum.photos/200"),
+                    contentDescription = "image",
+                    contentScale = ContentScale.FillBounds
                 )
             }
             Column(
@@ -76,14 +77,14 @@ fun OrderListingCard(
                         text = "#Order Id:",
                         color = Color.Black,
                         fontWeight = FontWeight.Normal,
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_semi_bold.montserrat_semi_bold)
                     )
                     Text(
                         text = order.id,
                         color = Color.Black,
                         fontWeight = FontWeight.Normal,
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_regular.montserrat_regular)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
@@ -91,14 +92,14 @@ fun OrderListingCard(
                         text = order.name,
                         color = Color.Black,
                         fontWeight = FontWeight.Normal,
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_regular.montserrat_regular)
                     )
                     Text(
                         text = order.date,
                         color = Color.Black,
                         fontWeight = FontWeight.Normal,
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_regular.montserrat_regular)
                     )
                 }
@@ -107,7 +108,7 @@ fun OrderListingCard(
                     text = "Amount:",
                     color = Color.Black,
                     fontWeight = FontWeight.Normal,
-                    fontSize = 12.sp,
+                    fontSize = 14.sp,
                     fontFamily = fontFamilyResource(MR.fonts.montserrat_semi_bold.montserrat_semi_bold)
                 )
                 Text(

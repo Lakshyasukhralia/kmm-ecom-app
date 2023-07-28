@@ -9,11 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
@@ -32,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.myapplication.common.MR
+import com.seiko.imageloader.rememberImagePainter
 import core.util.BackHandler
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
@@ -40,9 +38,8 @@ import feature.item.domain.model.Item
 import feature.item.presentation.component.ErrorView
 import feature.item.presentation.component.RoundedButton
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
 
-@OptIn(ExperimentalResourceApi::class)
+@OptIn(ExperimentalResourceApi::class, ExperimentalMaterialApi::class)
 @Composable
 internal fun ItemDetailScreen(
     backAction: () -> Unit,
@@ -89,10 +86,11 @@ internal fun ItemDetailScreen(
                 Column {
                     Box(modifier = Modifier.fillMaxWidth()) {
                         Image(
-                            painter = painterResource("compose-multiplatform.xml"),
-                            contentDescription = null,
-                            contentScale = ContentScale.Fit,
-                            modifier = Modifier.size(200.dp).align(Alignment.Center)
+                            painter = rememberImagePainter("https://picsum.photos/200"),
+                            contentDescription = "image",
+                            contentScale = ContentScale.FillBounds,
+                            modifier = Modifier.fillMaxWidth().height(200.dp)
+                                .align(Alignment.Center)
                         )
                     }
                     Spacer(modifier = Modifier.height(10.dp))

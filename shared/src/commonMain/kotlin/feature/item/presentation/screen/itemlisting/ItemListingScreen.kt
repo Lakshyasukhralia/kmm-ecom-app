@@ -1,5 +1,6 @@
 package feature.item.presentation.screen.itemlisting
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -17,6 +19,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -34,6 +37,7 @@ import dev.icerock.moko.resources.compose.fontFamilyResource
 import feature.item.domain.model.Item
 import feature.item.presentation.component.ErrorView
 import feature.item.presentation.component.ItemListingCard
+import feature.item.presentation.component.SearchBox
 
 @Composable
 internal fun ItemListingScreen(
@@ -46,6 +50,10 @@ internal fun ItemListingScreen(
 ) {
 
     val uiState by viewModel.uiState.collectAsState()
+
+    LaunchedEffect(Unit){
+        viewModel.getAllItems()
+    }
 
     Scaffold(
         topBar = {
@@ -77,6 +85,16 @@ internal fun ItemListingScreen(
                     .padding(5.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                item {
+                    SearchBox(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(5.dp)
+                            .border(1.dp, Color.LightGray, CircleShape),
+                        onSearch = { viewModel.getAllItems() }
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                }
                 uiState.items?.let {
                     items(uiState.items!!) { item ->
                         ItemListingCard(item) { onItemClick(item) }

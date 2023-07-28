@@ -73,6 +73,9 @@ kotlin {
 
                 // Coroutines
                 implementation(Deps.Org.JetBrains.Kotlinx.coroutinesCore)
+
+                // Image
+                api("io.github.qdsfdhvh:image-loader:1.6.2")
             }
 
         }
@@ -133,11 +136,11 @@ android {
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(17)
     }
 }
 

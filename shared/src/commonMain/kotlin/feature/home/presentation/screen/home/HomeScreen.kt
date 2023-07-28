@@ -31,10 +31,10 @@ internal fun HomeScreen(
 ) {
 
     val menuList = listOf(
-        HomeMenuItem("1", "Products", Screen.ItemListing),
-        HomeMenuItem("2", "Orders", Screen.OrderListing),
-        HomeMenuItem("3", "Profile", Screen.ItemListing),
-        HomeMenuItem("4", "Settings", Screen.ItemListing),
+        HomeMenuItem("1", "All Products", Screen.ItemListing, "product.xml"),
+        HomeMenuItem("2", "My Orders", Screen.OrderListing, "order.xml"),
+        HomeMenuItem("3", "My Profile", Screen.ItemListing, "profile.xml"),
+        HomeMenuItem("4", "Settings", Screen.ItemListing, "setting.xml"),
     )
 
     Scaffold(
