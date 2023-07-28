@@ -100,25 +100,6 @@ fun ItemListingCard(
                     fontFamily = fontFamilyResource(MR.fonts.montserrat_regular.montserrat_regular)
                 )
             }
-            Column(
-                modifier = Modifier
-                    .weight(.5f)
-                    .padding(top = 15.dp)
-                    .fillMaxSize(),
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.SpaceBetween
-            ) {
-                Box {
-                    Icon(
-                        imageVector = Icons.Default.MoreVert,
-                        contentDescription = "more",
-                        modifier = Modifier
-                            .height(25.dp)
-                            .width(25.dp)
-                            .clickable { }
-                    )
-                }
-            }
         }
     }
 }

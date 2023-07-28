@@ -1,9 +1,10 @@
-package feature.category.presentation.screen
+package feature.home.presentation.screen
 
+import Screen
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -20,28 +21,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.myapplication.common.MR
-import core.util.BackHandler
 import dev.icerock.moko.resources.compose.fontFamilyResource
-import feature.category.domain.model.Category
-import feature.category.presentation.component.CategoryCard
+import feature.home.domain.model.HomeMenuItem
+import feature.home.presentation.component.HomeMenuCard
 
 @Composable
-internal fun CategoryScreen(
+internal fun HomeScreen(
     backAction: () -> Unit,
-    onButtonClick: () -> Unit
+    onButtonClick: (screen: Screen) -> Unit
 ) {
 
-    val categoryList = listOf(
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1"),
-        Category("1", "Category 1")
+    val menuList = listOf(
+        HomeMenuItem("1", "Products", Screen.Category),
+        HomeMenuItem("2", "Orders", Screen.Category),
+        HomeMenuItem("3", "Profile", Screen.Category),
+        HomeMenuItem("4", "Settings", Screen.Category),
     )
 
     Scaffold(
@@ -50,32 +44,34 @@ internal fun CategoryScreen(
                 backgroundColor = Color.Black,
                 title = {
                     Text(
-                        text = "Category",
+                        text = "Menu",
                         fontFamily = fontFamilyResource(MR.fonts.montserrat_semi_bold.montserrat_semi_bold),
                         color = Color.White
                     )
                 },
-                navigationIcon = {
-                    IconButton(onClick = backAction) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = null,
-                            tint = Color.White
-                        )
-                    }
-                }
+//                navigationIcon = {
+//                    IconButton(onClick = backAction) {
+//                        Icon(
+//                            imageVector = Icons.Default.ArrowBack,
+//                            contentDescription = null,
+//                            tint = Color.White
+//                        )
+//                    }
+//                }
             )
         },
         content = { _ ->
-            BackHandler(true) { backAction() }
             LazyVerticalGrid(
-                columns = GridCells.Adaptive(128.dp),
+                modifier = Modifier.fillMaxSize(),
+                columns = GridCells.Fixed(2),
                 contentPadding = PaddingValues(10.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalArrangement = Arrangement.Center,
                 content = {
-                    items(categoryList) { item ->
+                    items(menuList) { item ->
                         Box(modifier = Modifier.padding(5.dp)) {
-                            CategoryCard(item) {
-                                onButtonClick()
+                            HomeMenuCard(item) {
+                                onButtonClick(item.screen)
                             }
                         }
                     }

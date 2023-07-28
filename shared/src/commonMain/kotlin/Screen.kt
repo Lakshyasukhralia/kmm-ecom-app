@@ -1,6 +1,8 @@
 enum class Screen {
     HelloWorld,
     SimpleViewModel,
+    Home,
     ItemListing,
-    Category
+    Category,
+    ItemDetail
 }
