@@ -39,7 +39,6 @@ import feature.item.presentation.component.ErrorView
 import feature.item.presentation.component.RoundedButton
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
-@OptIn(ExperimentalResourceApi::class, ExperimentalMaterialApi::class)
 @Composable
 internal fun ItemDetailScreen(
     backAction: () -> Unit,
@@ -113,7 +112,9 @@ internal fun ItemDetailScreen(
                 Column(modifier = Modifier.weight(1f, false)) {
                     RoundedButton(
                         text = "Checkout ₹${item.price}",
-                        onClick = { onCheckoutClick() },
+                        onClick = {
+                            onCheckoutClick()
+                        },
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(10.dp))
