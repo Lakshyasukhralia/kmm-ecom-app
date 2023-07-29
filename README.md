@@ -13,17 +13,14 @@ Compose-imageloader :framed_picture: - For loading and displaying images.<br>
 ### Getting Started :rocket:
 
 #### Clone the repository:
-
 bash
 Copy code
 git clone https://github.com/your-username/KMM-Ecom.git
 
 #### Open the project:
-
 Open the cloned repository in Android Studio or your preferred IDE.
 
 #### Build and Run:
-
 Build and run the app on your desired target platform - Android, iOS, or Desktop. :running:
 
 ### Contributions :raised_hands:
