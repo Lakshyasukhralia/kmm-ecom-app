@@ -13,8 +13,8 @@ Compose-imageloader :framed_picture: - For loading and displaying images.<br>
 ### Getting Started :rocket:
 
 #### Clone the repository:
-bash
-Copy code
+bash <br>
+Copy code <br>
 git clone https://github.com/your-username/KMM-Ecom.git
 
 #### Open the project:
