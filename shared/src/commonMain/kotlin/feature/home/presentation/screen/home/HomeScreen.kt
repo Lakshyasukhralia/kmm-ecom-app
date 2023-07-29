@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.myapplication.common.MR
+import core.util.Toast
 import dev.icerock.moko.resources.compose.fontFamilyResource
 import feature.home.domain.model.HomeMenuItem
 import feature.home.presentation.component.HomeMenuCard
@@ -33,8 +34,8 @@ internal fun HomeScreen(
     val menuList = listOf(
         HomeMenuItem("1", "All Products", Screen.ItemListing, "product.xml"),
         HomeMenuItem("2", "My Orders", Screen.OrderListing, "order.xml"),
-        HomeMenuItem("3", "My Profile", Screen.ItemListing, "profile.xml"),
-        HomeMenuItem("4", "Settings", Screen.ItemListing, "setting.xml"),
+        HomeMenuItem("3", "My Profile", Screen.Profile, "profile.xml"),
+        HomeMenuItem("4", "Settings", Screen.Setting, "setting.xml"),
     )
 
     Scaffold(

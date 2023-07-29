@@ -4,12 +4,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import core.util.Toast
 import feature.category.presentation.screen.category.CategoryScreen
 import feature.home.presentation.screen.home.HomeScreen
 import feature.item.domain.model.Item
 import feature.item.presentation.screen.itemdetail.ItemDetailScreen
 import feature.item.presentation.screen.itemlisting.ItemListingScreen
 import feature.order.presentation.screen.orderlisting.OrderListingScreen
+import feature.profile.presentation.screen.profile.ProfileScreen
 
 @Composable
 internal fun App() {
@@ -59,6 +61,15 @@ internal fun App() {
                 backAction = { currentScreen = Screen.Home },
                 onItemClick = {}
             )
+
+            Screen.Profile -> ProfileScreen(
+                backAction = { currentScreen = Screen.Home },
+            )
+
+            Screen.Setting -> {
+                 currentScreen = Screen.Home
+                Toast("Coming soon..")
+            }
         }
     }
 }

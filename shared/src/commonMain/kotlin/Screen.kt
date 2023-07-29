@@ -5,5 +5,7 @@ enum class Screen {
     ItemListing,
     Category,
     ItemDetail,
-    OrderListing
+    OrderListing,
+    Profile,
+    Setting
 }
