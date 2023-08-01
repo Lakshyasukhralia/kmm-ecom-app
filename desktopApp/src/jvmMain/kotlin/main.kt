@@ -3,7 +3,7 @@ import androidx.compose.ui.window.application
 import core.di.initKoin
 
 fun main() {
-    initKoin(enableNetworkLogs = false)
+    initKoin()
     application {
         Window(onCloseRequest = ::exitApplication) {
             MainView()
